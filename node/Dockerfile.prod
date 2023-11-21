@@ -11,4 +11,5 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "node", "index.js" ]
+CMD [ "./wait-for db:3306 -- echo 'Banco de dados up!'" ]
+ENTRYPOINT [ "node", "index.js" ]
